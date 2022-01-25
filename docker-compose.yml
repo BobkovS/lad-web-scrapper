@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  lad-web-scrapper:
+    restart: unless-stopped
+    image: lad-web-scrapper:latest
+    volumes:
+      - ./app.db:/home/lad-web-scrapper/app.db
+    container_name: lad-web-scrapper
+    ports:
+      - '8080:8080'
